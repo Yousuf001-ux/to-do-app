@@ -24,17 +24,6 @@
             </div>
         </div>
         <div class="main-content-empty-none">
-            <div class="text-button">
-                <div class="text-content">
-                    <h1>What would you like to do?</h1>
-                    <p>Start organizing your tasks today and create your first to-do now.</p>
-                </div>
-                <div class="button">
-                    <button>Create To-Do</button>
-                </div>
-            </div>
-        </div>
-        <div class="main-content-filled">
             <div class="nav">
                 <div class="links">
                     <div class="all">
@@ -43,63 +32,92 @@
                             <p>0</p>
                         </div>
                     </div>
-                    <div class="to-d0">
+                    <div class="to-do-no-border">
                         <p>To-do</p>
                         <div class="number">
                             <p>0</p>
                         </div>
                     </div>
-                    <div class="completed">
-                        <p>completed</p>
+                    <div class="completed-no-border">
+                        <p>Completed</p>
                         <div class="number">
                             <p>0</p>
                         </div>
                     </div>
                 </div>
-                <button>Add Task &#43;</button>
+                <div class="task-input">
+                    <form>
+                        <input type="text" name="task" id="task" placeholder="What would you like to do?">
+                        <button>Add Task &#43;</button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-image">
+                <img src="./assets/tasks.svg" alt="">
+                <p>Looks like you've got a clean slate. What's on your mind?</p>
+            </div>
+        </div>
+        <div class="main-content-filled-visible">
+            <div class="nav">
+                <div class="links">
+                    <div class="all">
+                        <p>All tasks</p>
+                        <div class="number">
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <div class="to-do-no-border">
+                        <p>To-do</p>
+                        <div class="number">
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <div class="completed-no-border">
+                        <p>Completed</p>
+                        <div class="number">
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-input">
+                    <form>
+                        <input type="text" name="task" id="task" placeholder="What do you want to do?">
+                        <button>Add Task &#43;</button>
+                    </form>
+                </div>
             </div>
             <div class="todos">
                 <div class="card">
-                    <div class="card-text-content">
-                        <h1>Title</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sequi ratione hic culpa distinctio.</p>
+                    <div class="top-content">
+                        <div class="vr"></div>
+                        <p>TO-DO</p>
                     </div>
-                    <div class="actions">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                    <div class="main-content">
+                        <h1>Design screens of a fintech mobile app</h1>
+                    </div>
+                    <div class="bottom-content actions">
+                        <img src="./assets/fluent-mdl2_check-mark.png" alt="mark" title="Mark as completed">
                         </svg>
-                        <i class="fa-regular fa-pen-to-square"></i>
-                        <i class="fa-regular fa-trash-can"></i>
+                        <i class="fa-regular fa-pen-to-square" title="Edit"></i>
+                        <i class="fa-regular fa-trash-can" title="Delete"></i>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-text-content">
-                        <h1>Title</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sequi ratione hic culpa distinctio.</p>
+                <!-- <div class="card">
+                    <div class="top-content">
+                        <div class="vr"></div>
+                        <p>TO-DO</p>
                     </div>
-                    <div class="actions">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                    <div class="main-content">
+                        <h1>Design screens of a fintech mobile app</h1>
+                    </div>
+                    <div class="bottom-content actions">
+                        <img src="./assets/fluent-mdl2_check-mark.png" alt="mark" title="Mark as completed">
                         </svg>
-                        <i class="fa-regular fa-pen-to-square"></i>
-                        <i class="fa-regular fa-trash-can"></i>
+                        <i class="fa-regular fa-pen-to-square" title="Edit"></i>
+                        <i class="fa-regular fa-trash-can" title="Delete"></i>
                     </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-text-content">
-                        <h1>Title</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sequi ratione hic culpa distinctio.</p>
-                    </div>
-                    <div class="actions">
-                        <svg width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                        </svg>
-                        <i class="fa-regular fa-pen-to-square"></i>
-                        <i class="fa-regular fa-trash-can"></i>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
