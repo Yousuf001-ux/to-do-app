@@ -5,10 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do</title>
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                </svg>
+                <h1>To-Do</h1>
+            </div>
+            <div class="profile-container">
+                <div class="profile">
+                    <img src="./assets/tobi's_profile.jpg" alt="Tobi's profile picture">
+                    <!-- <p>Yousuf</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="main-content-empty-none">
+            <div class="text-button">
+                <div class="text-content">
+                    <h1>What would you like to do?</h1>
+                    <p>Start organizing your tasks today and create your first to-do now.</p>
+                </div>
+                <div class="button">
+                    <button>Create To-Do</button>
+                </div>
+            </div>
+        </div>
+        <div class="main-content-filled">
+            <div class="nav">
+                <div class="links">
+                    <div class="all">
+                        <p>All tasks</p>
+                        <div class="number">
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <div class="to-d0">
+                        <p>To-do</p>
+                        <div class="number">
+                            <p>0</p>
+                        </div>
+                    </div>
+                    <div class="completed">
+                        <p>completed</p>
+                        <div class="number">
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+                <button>Add Task &#43;</button>
+            </div>
+            <div class="todos">
+                <div class="card">
+                    <div class="card-text-content">
+                        <h1>Title</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sequi ratione hic culpa distinctio.</p>
+                    </div>
+                    <div class="actions">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                        </svg>
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-text-content">
+                        <h1>Title</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sequi ratione hic culpa distinctio.</p>
+                    </div>
+                    <div class="actions">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                        </svg>
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-text-content">
+                        <h1>Title</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sequi ratione hic culpa distinctio.</p>
+                    </div>
+                    <div class="actions">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                        </svg>
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="./index.js" type="module"></script>
