@@ -23,71 +23,37 @@
                 </div>
             </div>
         </div>
-        <div class="main-content-empty-none">
+        <div class="main-content-filled-visible" id="main-content">
             <div class="nav">
                 <div class="links">
-                    <div class="all">
+                    <div class="all" id="all-tasks">
                         <p>All tasks</p>
                         <div class="number">
-                            <p>0</p>
+                            <p id="counter">0</p>
                         </div>
                     </div>
-                    <div class="to-do-no-border">
+                    <div class="to-do-no-border" id="to-do">
                         <p>To-do</p>
                         <div class="number">
-                            <p>0</p>
+                            <p id="counter">0</p>
                         </div>
                     </div>
-                    <div class="completed-no-border">
+                    <div class="completed-no-border" id="completed">
                         <p>Completed</p>
                         <div class="number">
-                            <p>0</p>
+                            <p id="counter">0</p>
                         </div>
                     </div>
                 </div>
                 <div class="task-input">
-                    <form>
-                        <input type="text" name="task" id="task" placeholder="What would you like to do?">
-                        <button>Add Task &#43;</button>
-                    </form>
-                </div>
-            </div>
-            <div class="text-image">
-                <img src="./assets/tasks.svg" alt="">
-                <p>Looks like you've got a clean slate. What's on your mind?</p>
-            </div>
-        </div>
-        <div class="main-content-filled-visible">
-            <div class="nav">
-                <div class="links">
-                    <div class="all">
-                        <p>All tasks</p>
-                        <div class="number">
-                            <p>0</p>
-                        </div>
-                    </div>
-                    <div class="to-do-no-border">
-                        <p>To-do</p>
-                        <div class="number">
-                            <p>0</p>
-                        </div>
-                    </div>
-                    <div class="completed-no-border">
-                        <p>Completed</p>
-                        <div class="number">
-                            <p>0</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="task-input">
-                    <form>
+                    <form id="form">
                         <input type="text" name="task" id="task" placeholder="What do you want to do?">
-                        <button>Add Task &#43;</button>
+                        <button type="submit" id="submit">Add Task &#43;</button>
                     </form>
                 </div>
             </div>
-            <div class="todos">
-                <div class="card">
+            <div class="todos" id="todos-container">
+                <!-- <div class="card">
                     <div class="top-content">
                         <div class="vr"></div>
                         <p>TO-DO</p>
@@ -97,11 +63,10 @@
                     </div>
                     <div class="bottom-content actions">
                         <img src="./assets/fluent-mdl2_check-mark.png" alt="mark" title="Mark as completed">
-                        </svg>
                         <i class="fa-regular fa-pen-to-square" title="Edit"></i>
                         <i class="fa-regular fa-trash-can" title="Delete"></i>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="card">
                     <div class="top-content">
