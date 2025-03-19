@@ -2,6 +2,8 @@ let all = document.getElementById("all-tasks")
 let toDo = document.getElementById("to-do")
 let completed = document.getElementById("completed")
 let counter = document.getElementById("counter")
+let counterToDo = document.getElementById("counter-todo")
+let counterCompleted = document.getElementById("counter-com")
 let form = document.getElementById("form")
 let inputValue = document.getElementById("task")
 let emptyState = document.getElementById("empty-state")
@@ -9,6 +11,7 @@ let mainContent = document.getElementById("main-content")
 let toDoContainer = document.getElementById("todos-container")
 
 let allTasks = []
+let taskIdCounter = 0
 form.addEventListener("submit", collectInputValue)
 function collectInputValue(event){
     event.preventDefault()
@@ -16,6 +19,7 @@ function collectInputValue(event){
     let taskTitle = inputValue.value
     taskTitle = capitalizeFirstLetter(taskTitle)
     let taskDetails = {
+        id : taskIdCounter+=1,
         taskName : taskTitle
     }
 
@@ -36,6 +40,7 @@ getDetails()
 function printOnUI(){
     toDoContainer.innerHTML = " "
     allTasks.forEach((items)=>{
+        let taskID = items.id
         let UITitle = items.taskName
         
         toDoContainer.classList.add("todos")
@@ -49,6 +54,9 @@ function printOnUI(){
         verticalRule.classList.add("vr")
         let tag = document.createElement("p")
         tag.textContent = "TO-DO"
+
+        let mainPart = document.createElement("div")
+        mainPart.classList.add("second-part")
 
         let title = document.createElement("div")
         title.classList.add("main-content")
@@ -67,16 +75,33 @@ function printOnUI(){
         let deleteIcon = document.createElement("i")
         deleteIcon.classList.add("fa-regular","fa-trash-can")
         deleteIcon.setAttribute("title","Delete")
+        deleteIcon.addEventListener("click", function(){
+            deleteTask(taskID)
+        })
 
         bottomContent.append(markIcon, editIcon, deleteIcon)
         title.append(heading)
         topContent.append(verticalRule, tag)
-        cardContainer.append(topContent, title, bottomContent)
+        mainPart.append(title, bottomContent)
+        cardContainer.append(topContent, mainPart)
         toDoContainer.append(cardContainer)
     })
+    let counterNumber = allTasks.length
+    counter.textContent = counterNumber
+    // counterToDo.textContent = counterNumber
 }
 printOnUI
 
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function deleteTask(id){
+    id = Number(id)
+    allTasks = allTasks.filter((items)=>{
+       return items.id !== id
+    })
+    localStorage.setItem("tasks", JSON.stringify(allTasks))
+    localStorage.setItem("tasks", JSON.stringify(allTasks))
+    printOnUI()
 }
