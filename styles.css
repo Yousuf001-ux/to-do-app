@@ -292,6 +292,18 @@ button:hover {
     border-radius: 0.5rem;
 }
 
+.card-complete {
+    width: 32%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 1.35rem 1.5rem;
+    border-top: 2px solid #46B988;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    border-radius: 0.5rem;
+}
+
 .top-content {
     width: 100%;
     height: auto;
@@ -306,6 +318,14 @@ button:hover {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     background-color: #F7BC1E;
+}
+
+.top-content .vr-complete {
+    width: 4px;
+    height: 16px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #46B988;
 }
 
 .top-content p {
@@ -332,6 +352,18 @@ button:hover {
     color: #162233;
 }
 
+/* .h-one {
+    font-size: 1.5rem;
+    line-height: 160%;
+    color: #AEB3C1;
+} */
+
+.card-complete h1.h-one {
+    font-size: 1.5rem;
+    line-height: 160%;
+    color: #808898;
+}
+
 .actions {
     width: 100%;
     height: auto;
@@ -339,6 +371,10 @@ button:hover {
     justify-content: end;
     align-items: center;
     column-gap: 0.85rem;
+}
+
+.actions .mark-done, .actions .edit-done {
+    display: none;
 }
 
 .mark, .edit, .delete {
@@ -363,6 +399,16 @@ i.fa-trash-can {
 
 .actions i.fa-pen-to-square:hover {
     color: #2a44d8;
+}
+
+@media(max-width:1327px){
+    .todos {
+        width: 100%;
+    }
+    
+    .card {
+        width: 48%;
+    }
 }
 
 
