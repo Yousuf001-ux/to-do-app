@@ -16,6 +16,8 @@ let activeTab = "all"
 let taskIdCounter = 0
 let isEditing = false
 let editingTaskID = null
+
+// This function collect the input value from the input field, captilise the first letter of the input value,distinguish when the user is trying to edit and when the user is trying to enter a new task. This function set an additional increment value of 1 to the taskiscounter and send it to the local storage to  make it persistent. Then the function push the taskDetails  into all task array and then send the alltask array to the local storage for persistence
 form.addEventListener("submit", collectInputValue)
 function collectInputValue(event){
     event.preventDefault()
@@ -55,22 +57,16 @@ function collectInputValue(event){
     updateCounters()
 }
 
+// This function basically gets the alltask array sent to the local storage
 function getDetails(){
     if(localStorage.getItem("tasks")){
         allTasks = JSON.parse(localStorage.getItem("tasks"))
-
-        if(allTasks.length > 0){
-            taskIdCounter = Math.max(...allTasks.map((items)=>{
-                return items.id
-            }))
-        } else {
-            taskIdCounter = 1
-        }
     }
     printOnUI()
 }
 getDetails()
 
+// This function clears the UI and ensures that the data shown by default on the UI is the data under the all tasks tab. This function loops through the all tasks array that's also the same as the filtered tasks in this situation, and gets the necesarry detail out of the array the print it on the ui after creating all the elements, the class and set all the attributes needed. Each element is then appended to their respective parents
 function printOnUI(){
     toDoContainer.innerHTML = " "
 
@@ -164,10 +160,12 @@ function printOnUI(){
 }
 printOnUI
 
+// This function capitalizes the first letter of every word passes into it.
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// This function deletes card. It does so taking the id(and converting it to the number data type) of the card as an argument. This allows the function to be specific about which card to delete as the id is unique to each card. the all tasks object is then looped through using filter to filter out the card containing the id then the rest details are retrned and printed on the ui 
 function deleteTask(id){
     id = Number(id)
     allTasks = allTasks.filter((items)=>{
@@ -178,6 +176,7 @@ function deleteTask(id){
     printOnUI()
 }
 
+// This function edits the task name. It does so taking the id(and converting it to the number data type) of the card as an argument. This allows the function to be specific about which card to edit as the id is unique to each card.
 function editTask(id){
     id = Number(id)
     allTasks.forEach((items)=>{
@@ -192,6 +191,7 @@ function editTask(id){
     printOnUI()
 }
 
+// This function marks a task as completed. The all task array is looped through using map. the specific task to mark as completed is identified by passing its id into the function.The value of the completed key is then changed to true. The new object is then returned into the new all tasks array. The local storage is the refreshed with the new all task obejcts and the task ids printed on the ui
 function markAsComplete(id){
 
     id = Number(id)
@@ -209,6 +209,8 @@ function markAsComplete(id){
     printOnUI()
 }
 
+
+// This function updates the counters by filtering through the all tasks array and returning the tasks depending on the condition passed. The length of the array is the checked and stored and displayed on the ui.
 function updateCounters(){
     let todoLength = allTasks.filter((items)=>{
         return items.completed === false
@@ -226,6 +228,7 @@ function updateCounters(){
     localStorage.setItem("tasks", JSON.stringify(allTasks))
 }
 
+// This function prints only the tasks under to the todo category on the ui(it brings all the tasks with the boolean property of the completed key as false) and updates the css
 toDo.addEventListener("click", activateTodo)
 function activateTodo(){
     activeTab = "to-do"
@@ -248,6 +251,7 @@ function activateTodo(){
     updateCounters()
 }
 
+// This function prints all the tasks on the ui and updates the css
 all.addEventListener("click", activateAll)
 function activateAll(){
     activeTab = "all"
@@ -270,6 +274,7 @@ function activateAll(){
     updateCounters()
 }
 
+// This function prints only the tasks under to the completed category on the ui and updates the css
 completed.addEventListener("click", activateComplete)
 function activateComplete(){
     activeTab = "completed"
