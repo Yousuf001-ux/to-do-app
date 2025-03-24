@@ -40,15 +40,15 @@ function collectInputValue(event){
         isEditing = false
         editingTaskID = null
     } else {
-        taskIdCounter+=1
-        localStorage.setItem("taskID", JSON.stringify(taskIdCounter))
-
         let taskDetails = {
             id : taskIdCounter,
             taskName : taskTitle,
             completed : false
         }
         allTasks.push(taskDetails)
+        taskIdCounter += 1
+        localStorage.setItem("taskID", JSON.stringify(taskIdCounter))
+
     }
     
     localStorage.setItem("tasks", JSON.stringify(allTasks))
@@ -61,6 +61,16 @@ function collectInputValue(event){
 function getDetails(){
     if(localStorage.getItem("tasks")){
         allTasks = JSON.parse(localStorage.getItem("tasks"))
+
+        if(allTasks.length > 0){
+            taskIdCounter = Math.max(...allTasks.map((items)=>{
+                return items.id
+            })) + 1
+        }else {
+            taskIdCounter = 1
+        }
+    }else {
+        taskIdCounter = 1
     }
     printOnUI()
 }
